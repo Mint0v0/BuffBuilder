@@ -20,4 +20,19 @@ public class PlayerData
     {
         Buffs.Add(buff);
     }
+
+    // 当前激活的联动列表（每回合由 SynergyManager 写入）
+    public List<ActiveSynergy> ActiveSynergies { get; private set; } = new List<ActiveSynergy>();
+
+    // 设置联动列表（由 SynergyManager 调用）
+    public void SetActiveSynergies(List<ActiveSynergy> synergies)
+    {
+        ActiveSynergies = synergies;
+    }
+
+    // 获取所有已激活的联动（UI 读取用）
+    public List<ActiveSynergy> GetActiveSynergies()
+    {
+        return ActiveSynergies;
+    }
 }

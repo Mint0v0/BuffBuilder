@@ -22,6 +22,12 @@ public class BuffManager : MonoBehaviour
     // 通过 Inspector 拖入，不用 Find
     [SerializeField] private TopBarUI topBarUI;
 
+    // 联动管理器引用，通过 Inspector 拖入
+    [SerializeField] private SynergyManager synergyManager;
+
+    // 联动面板 UI，Inspector 拖入 SynergyPanel
+    [SerializeField] private SynergyPanelUI synergyPanelUI;
+
     // 所有可用的 Buff 配置表
     private List<BuffData> _allBuffs;
 
@@ -82,14 +88,20 @@ public class BuffManager : MonoBehaviour
         // 2. 应用 Buff 效果到数据层
         ApplyBuff(data);
 
-        // 3. 刷新 TopBar UI
+        // 3. 判断联动，结果写入 PlayerData
+        synergyManager.EvaluateSynergies(_playerData);
+
+        // 4. 刷新联动面板 UI
+        synergyPanelUI.Refresh(_playerData);
+
+        // 5. 刷新 TopBar UI
         topBarUI.Refresh(_playerData);
 
-        // 4. 在 PlayerBuffPanel 显示
+        // 6. 在 PlayerBuffPanel 显示
         GameObject slot = Instantiate(_buffSlotPrefab, _playerBuffPanel);
         slot.GetComponent<BuffSlotUI>().Setup(data, null);
 
-        // 5. 清空候选区
+        // 7. 清空候选区
         foreach (Transform child in _buffPanel)
             Destroy(child.gameObject);
 

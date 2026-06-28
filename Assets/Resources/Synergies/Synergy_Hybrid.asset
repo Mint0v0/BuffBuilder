@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851974b06b8e88a4f98f1efa3d1ab738, type: 3}
+  m_Name: Synergy_Hybrid
+  m_EditorClassIdentifier: 
+  synergyName: "\u6218\u5546\u53CC\u4FEE"
+  description: "\u653B\u5B88\u517C\u5907\uFF0C\u6BCF\u56DE\u5408\u989D\u5916 +2 \u91D1\u5E01"
+  requiredBuffTypes: 0000000007000000
+  bonusType: 1
+  bonusValue: 2

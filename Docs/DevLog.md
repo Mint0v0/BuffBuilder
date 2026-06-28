@@ -247,3 +247,24 @@ TopBar 更新
 ## Git Commit
 
 feat: 建立 PlayerData 数据层，完成 Buff 生效与 TopBar 分层刷新
+
+# Sprint 4 —— Buff 联动系统
+
+## 新增
+
+- SynergyData（ScriptableObject）
+- SynergyManager
+- ActiveSynergy
+- SynergyPanelUI
+- SynergySlotUI
+
+## 学到的内容
+
+- ScriptableObject 配置玩法数据
+- 运行时状态与配置数据分离
+- UI 只读取 PlayerData
+- Gameplay 与 View 解耦
+
+## 下一步
+
+Sprint 5：经济系统
